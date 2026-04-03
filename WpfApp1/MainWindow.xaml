@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="DepositCalculator17.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Калькулятор вклада - Вариант 17" 
+        Height="605" 
+        Width="693"
+        xml:lang="ru-RU"
+        FontFamily="Segoe UI">
+
+    <Grid Margin="30">
+        <StackPanel>
+            <Label FontSize="16" FontWeight="Bold" Content="Калькулятор дохода по вкладу"/>
+
+            <Label Content="Сумма вклада (руб.):" Margin="0,10,0,0"/>
+            <TextBox x:Name="txtSum" FontSize="14" Height="30"/>
+
+            <Label Content="Срок (в месяцах):" Margin="0,10,0,0"/>
+            <TextBox x:Name="txtMonths" FontSize="14" Height="30"/>
+
+            <Label Content="Годовая процентная ставка (%):" Margin="0,10,0,0"/>
+            <TextBox x:Name="txtRate" FontSize="14" Height="30"/>
+
+            <GroupBox Header="Схема начисления процентов" Margin="0,15,0,0">
+                <StackPanel Margin="10">
+                    <RadioButton x:Name="rbSimple" Content="Простые проценты" IsChecked="True"/>
+                    <RadioButton x:Name="rbCompound" Content="Сложные проценты (ежемесячная капитализация)" Margin="0,8,0,0"/>
+                </StackPanel>
+            </GroupBox>
+
+            <Button Content="РАССЧИТАТЬ" Height="45" FontSize="16" FontWeight="Bold" 
+                    Margin="0,20,0,0" Click="Calculate_Click"/>
+
+            <TextBlock x:Name="txtResult" Margin="0,20,0,0" FontSize="15" TextWrapping="Wrap" 
+                       FontWeight="SemiBold"/>
+        </StackPanel>
+    </Grid>
+</Window>
